@@ -1,0 +1,114 @@
+#inherit_from: .rubocop_todo.yml
+
+AllCops:
+  DisplayCopNames: true
+  TargetRubyVersion: 2.3
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Metrics/LineLength:
+  Max: 100
+  AllowHeredoc: true
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+
+Style/FirstParameterIndentation:
+  EnforcedStyle: consistent
+
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Style/CaseIndentation:
+  IndentWhenRelativeTo: end
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: nested
+
+Style/CommentAnnotation:
+  Enabled: false
+
+# Does not work for multi-line copyright notices.
+Style/Copyright:
+  Enabled: false
+
+Style/EmptyLineBetweenDefs:
+  AllowAdjacentOneLineDefs: true
+
+# These two cops do not differentiate between the scope the file is describing
+# and any namespaces it is nested under.  If this is not acceptable,
+# no_empty_lines produces the least offensive results.
+Style/EmptyLinesAroundClassBody:
+  Enabled: false
+Style/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+Style/FileName:
+  ExpectMatchingDefinition: true
+  Exclude:
+    - 'spec/**/*'
+    - 'lib/*/version.rb'
+
+# Produces poor results.
+Style/GuardClause:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  MaxLineLength: 100
+
+Style/IndentArray:
+  EnforcedStyle: consistent
+
+Style/IndentHash:
+  EnforcedStyle: consistent
+
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+# Produces poor results.
+Style/Next:
+  Enabled: false
+
+Style/RedundantReturn:
+  AllowMultipleReturnValues: true
+
+Style/RegexpLiteral:
+  AllowInnerSlashes: true
+
+Style/Semicolon:
+  AllowAsExpressionSeparator: true
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+
+Style/SpaceInsideBlockBraces:
+  SpaceBeforeBlockParameters: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/WhileUntilModifier:
+  MaxLineLength: 100
+
+Lint/BlockAlignment:
+  AlignWith: start_of_line
+
+Lint/EndAlignment:
+  AlignWith: start_of_line
+
+Lint/DefEndAlignment:
+  AlignWith: def
+
+Performance/RedundantMerge:
+  Enabled: false
+
+Style/WordArray:
+  EnforcedStyle: brackets
