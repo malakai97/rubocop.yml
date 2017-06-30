@@ -1,4 +1,4 @@
-#inherit_from: .rubocop_todo.yml
+inherit_from: .rubocop_todo.yml
 
 AllCops:
   DisplayCopNames: true
@@ -15,14 +15,24 @@ Metrics/LineLength:
     - http
     - https
 
-Style/FirstParameterIndentation:
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+
+Layout/ElseAlignment:
+  Enabled: false
+
+Layout/FirstParameterIndentation:
   EnforcedStyle: consistent
 
-Style/AlignParameters:
+Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
-Style/CaseIndentation:
-  IndentWhenRelativeTo: end
+Layout/CaseIndentation:
+  EnforcedStyle: end
+
+Layout/ClosingParenthesisIndentation:
+  Enabled: false
 
 Style/ClassAndModuleChildren:
   EnforcedStyle: nested
@@ -34,15 +44,15 @@ Style/CommentAnnotation:
 Style/Copyright:
   Enabled: false
 
-Style/EmptyLineBetweenDefs:
+Layout/EmptyLineBetweenDefs:
   AllowAdjacentOneLineDefs: true
 
 # These two cops do not differentiate between the scope the file is describing
 # and any namespaces it is nested under.  If this is not acceptable,
 # no_empty_lines produces the least offensive results.
-Style/EmptyLinesAroundClassBody:
+Layout/EmptyLinesAroundClassBody:
   Enabled: false
-Style/EmptyLinesAroundModuleBody:
+Layout/EmptyLinesAroundModuleBody:
   Enabled: false
 
 Style/FileName:
@@ -56,18 +66,23 @@ Style/GuardClause:
   Enabled: false
 
 Style/IfUnlessModifier:
-  MaxLineLength: 100
+  Enabled: false
 
-Style/IndentArray:
+Layout/IndentArray:
   EnforcedStyle: consistent
 
-Style/IndentHash:
+Layout/IndentHash:
   EnforcedStyle: consistent
 
-Style/MultilineMethodCallIndentation:
+Layout/AlignHash:
+  EnforcedColonStyle: table
+  EnforcedHashRocketStyle: table
+  EnforcedLastArgumentHashStyle: always_ignore
+
+Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
 # Produces poor results.
@@ -89,7 +104,7 @@ Style/StringLiterals:
 Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
 
-Style/SpaceInsideBlockBraces:
+Layout/SpaceInsideBlockBraces:
   SpaceBeforeBlockParameters: false
 
 Style/SymbolArray:
@@ -99,13 +114,13 @@ Style/WhileUntilModifier:
   MaxLineLength: 100
 
 Lint/BlockAlignment:
-  AlignWith: start_of_line
+  EnforcedStyleAlignWith: start_of_line
 
 Lint/EndAlignment:
-  AlignWith: start_of_line
+  EnforcedStyleAlignWith: start_of_line
 
 Lint/DefEndAlignment:
-  AlignWith: def
+  EnforcedStyleAlignWith: def
 
 Performance/RedundantMerge:
   Enabled: false
