@@ -4,6 +4,13 @@ AllCops:
   DisplayCopNames: true
   TargetRubyVersion: 2.3
 
+Naming/FileName:
+  ExpectMatchingDefinition: true
+  Exclude:
+    - 'spec/**/*'
+    - 'lib/*/version.rb'
+    - 'bin/console'
+
 Style/Alias:
   EnforcedStyle: prefer_alias_method
 
@@ -54,12 +61,6 @@ Layout/EmptyLinesAroundClassBody:
   Enabled: false
 Layout/EmptyLinesAroundModuleBody:
   Enabled: false
-
-Style/FileName:
-  ExpectMatchingDefinition: true
-  Exclude:
-    - 'spec/**/*'
-    - 'lib/*/version.rb'
 
 # Produces poor results.
 Style/GuardClause:
